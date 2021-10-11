@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from collections import namedtuple
 from time import ctime
 import discord
