@@ -79,6 +79,14 @@ async def on_message(message):
                         else:
                             bcount = stats["count"] + 1
                             bumps.update_one({"id":mid},{"$set":{"count":bcount}})
-                    
+
+@client.remove_command("help")
+
+@client.command()
+async def help(ctx):
+    em = discord.Embed(title="Help",description="Prefix = '+' ")
+    em.add_field(name="bumpcount",value="Shows the bump count of the user",inline=False)
+    em.add_field(name="bumplb",value="Shows the server leaderboard")
+    await ctx.send(embed=em)
             
 client.run("ODk2MzE4OTI1MzMwMDU1MTk4.YWFYDA.pvz9nWktNc3etOrwVwNWU4nzI7M")
