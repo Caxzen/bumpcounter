@@ -41,7 +41,7 @@ async def bumplb(ctx):
     for i in rankings:  
         x = x+1
         try:
-            if i["id"]!=None:
+            if i["id"]!=0:
                 name1 = ctx.guild.get_member(i["id"])
                 bcount = i["count"]
                 em.add_field(name=f"{name1}",value=f"Bump count:{bcount}",inline=False)
